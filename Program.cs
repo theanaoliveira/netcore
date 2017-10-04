@@ -29,8 +29,10 @@ namespace netcore
 
             // Get the stream containing content returned by the server.
             var dataStream = res.GetResponseStream();
+
             // Open the stream using a StreamReader for easy access.
             var reader = new StreamReader(dataStream);
+
             // Read the content.
             var responseFromServer = reader.ReadToEnd();
 
