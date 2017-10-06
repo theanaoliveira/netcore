@@ -13,13 +13,7 @@ namespace netcore
         static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.UTF8;
-
-
-
-            var conn = ConfigurationManager.ConnectionStrings["prod"].ConnectionString;
-
-            //Connection.testeConn();
-
+            
             GetInfoFacebook();
         }
 
