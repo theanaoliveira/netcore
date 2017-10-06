@@ -1,0 +1,13 @@
+C:\Users\anacarolineo\Desktop\Project\netcore\application.test\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\anacarolineo\Desktop\Project\netcore\application.test\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\anacarolineo\Desktop\Project\netcore\application.test\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\anacarolineo\Desktop\Project\netcore\application.test\bin\Debug\netcoreapp2.0\application.test.deps.json
+C:\Users\anacarolineo\Desktop\Project\netcore\application.test\bin\Debug\netcoreapp2.0\application.test.runtimeconfig.json
+C:\Users\anacarolineo\Desktop\Project\netcore\application.test\bin\Debug\netcoreapp2.0\application.test.runtimeconfig.dev.json
+C:\Users\anacarolineo\Desktop\Project\netcore\application.test\bin\Debug\netcoreapp2.0\application.test.dll
+C:\Users\anacarolineo\Desktop\Project\netcore\application.test\bin\Debug\netcoreapp2.0\application.test.pdb
+C:\Users\anacarolineo\Desktop\Project\netcore\application.test\obj\Debug\netcoreapp2.0\application.test.csproj.CoreCompileInputs.cache
+C:\Users\anacarolineo\Desktop\Project\netcore\application.test\obj\Debug\netcoreapp2.0\application.test.AssemblyInfoInputs.cache
+C:\Users\anacarolineo\Desktop\Project\netcore\application.test\obj\Debug\netcoreapp2.0\application.test.AssemblyInfo.cs
+C:\Users\anacarolineo\Desktop\Project\netcore\application.test\obj\Debug\netcoreapp2.0\application.test.dll
+C:\Users\anacarolineo\Desktop\Project\netcore\application.test\obj\Debug\netcoreapp2.0\application.test.pdb

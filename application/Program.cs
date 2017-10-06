@@ -5,7 +5,8 @@ using System.IO;
 using System.Net;
 using System.Text;
 using static netcore.ItensFacebook;
-//using clsDataAccess;
+using classes;
+
 namespace netcore
 {
     class Program
@@ -13,7 +14,10 @@ namespace netcore
         static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.UTF8;
-            
+
+            Connection.GetConnection("");
+
+
             GetInfoFacebook();
         }
 
