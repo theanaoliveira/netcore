@@ -9,16 +9,16 @@ namespace dataAccess
     {
         public enum StringConnection
         {
-            teste = 1,
+            admin = 1,
         }
     }
     
     public class Connection
     {
-        public static void GetConnection(string pesquisa)
+        public static void GetConnection(string pesquisa, int tipoConexao)
         {
-            var nameConnection = (int)EnumConnection.StringConnection.teste;
-            var lstrConn = ConfigurationManager.ConnectionStrings[nameConnection].ConnectionString;
+            var nameConnection = tipoConexao;
+            var lstrConn = ConfigurationManager.ConnectionStrings[tipoConexao].ConnectionString;
 
             var conn = new NpgsqlConnection(lstrConn);
 

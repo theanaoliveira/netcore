@@ -14,7 +14,7 @@ namespace netcore
         {
             Console.OutputEncoding = Encoding.UTF8;
 
-            Connection.GetConnection("");
+            //Connection.GetConnection("");
 
 
             GetInfoFacebook();
