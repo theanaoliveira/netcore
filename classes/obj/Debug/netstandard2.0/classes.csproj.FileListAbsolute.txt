@@ -1,9 +1,0 @@
-C:\Users\anacarolineo\Desktop\Project\netcore\classes\bin\Debug\netstandard2.0\classes.deps.json
-C:\Users\anacarolineo\Desktop\Project\netcore\classes\bin\Debug\netstandard2.0\classes.dll
-C:\Users\anacarolineo\Desktop\Project\netcore\classes\bin\Debug\netstandard2.0\classes.pdb
-C:\Users\anacarolineo\Desktop\Project\netcore\classes\obj\Debug\netstandard2.0\classes.csproj.CoreCompileInputs.cache
-C:\Users\anacarolineo\Desktop\Project\netcore\classes\obj\Debug\netstandard2.0\classes.AssemblyInfoInputs.cache
-C:\Users\anacarolineo\Desktop\Project\netcore\classes\obj\Debug\netstandard2.0\classes.AssemblyInfo.cs
-C:\Users\anacarolineo\Desktop\Project\netcore\classes\obj\Debug\netstandard2.0\classes.dll
-C:\Users\anacarolineo\Desktop\Project\netcore\classes\obj\Debug\netstandard2.0\classes.pdb
-C:\Users\anacarolineo\Desktop\Project\netcore\classes\obj\Debug\netstandard2.0\classes.csprojResolveAssemblyReference.cache

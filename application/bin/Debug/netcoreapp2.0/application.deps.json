@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "b148ca6d17292592e8f63aae21c066a02663aab8"
+    "signature": "962a8f61bb28e1ee5f63d749cb659157447be8ca"
   },
   "compilationOptions": {},
   "targets": {
@@ -9,7 +9,7 @@
       "application/1.0.0": {
         "dependencies": {
           "Newtonsoft.Json": "10.0.3",
-          "classes": "1.0.0"
+          "dataAccess": "1.0.0"
         },
         "runtime": {
           "application.dll": {}
@@ -36,11 +36,6 @@
         }
       },
       "Microsoft.NETCore.Targets/1.1.0": {},
-      "MSA.NetCore.ODBC/1.0.3": {
-        "runtime": {
-          "lib/netstandard1.6/NetCoreODBC.dll": {}
-        }
-      },
       "Newtonsoft.Json/10.0.3": {
         "dependencies": {
           "Microsoft.CSharp": "4.3.0",
@@ -51,6 +46,14 @@
         },
         "runtime": {
           "lib/netstandard1.3/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Npgsql/3.2.5": {
+        "dependencies": {
+          "System.Threading.Tasks.Extensions": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Npgsql.dll": {}
         }
       },
       "System.Collections/4.3.0": {
@@ -412,13 +415,13 @@
           "System.Xml.ReaderWriter": "4.3.0"
         }
       },
-      "classes/1.0.0": {
+      "dataAccess/1.0.0": {
         "dependencies": {
-          "MSA.NetCore.ODBC": "1.0.3",
+          "Npgsql": "3.2.5",
           "System.Configuration.ConfigurationManager": "4.4.0"
         },
         "runtime": {
-          "classes.dll": {}
+          "dataAccess.dll": {}
         }
       }
     }
@@ -443,19 +446,19 @@
       "path": "microsoft.netcore.targets/1.1.0",
       "hashPath": "microsoft.netcore.targets.1.1.0.nupkg.sha512"
     },
-    "MSA.NetCore.ODBC/1.0.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-45a8GQipfRus6fbTllQqamqc4lbJh/vvtHzuylenEZp0edOEKbMaIJ6l2Kpkr7R6c4jcoImWyP2whhc5O5KFvQ==",
-      "path": "msa.netcore.odbc/1.0.3",
-      "hashPath": "msa.netcore.odbc.1.0.3.nupkg.sha512"
-    },
     "Newtonsoft.Json/10.0.3": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-wBM7i7i3U2WX0ecor4zdVGvgrwFUjuigBoHKiL+nH39fCOpCPjBY3RDqJM32edvdyTAVdjzlccHsg41+/+zpSA==",
       "path": "newtonsoft.json/10.0.3",
       "hashPath": "newtonsoft.json.10.0.3.nupkg.sha512"
+    },
+    "Npgsql/3.2.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-89z5pHuLuwjkHz/cQLuM/YxlepR/0NKJP+Cvu8z1cAMv7AdKZnN5leQqV6HxIQDR245Xal1w5OH7kDb9hDRupg==",
+      "path": "npgsql/3.2.5",
+      "hashPath": "npgsql.3.2.5.nupkg.sha512"
     },
     "System.Collections/4.3.0": {
       "type": "package",
@@ -737,7 +740,7 @@
       "path": "system.xml.xmldocument/4.3.0",
       "hashPath": "system.xml.xmldocument.4.3.0.nupkg.sha512"
     },
-    "classes/1.0.0": {
+    "dataAccess/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
