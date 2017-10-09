@@ -1,7 +1,10 @@
 ﻿using Npgsql;
 using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
+using static dataAccess.EnumConnection;
 
 namespace dataAccess
 {
@@ -10,36 +13,62 @@ namespace dataAccess
         public enum StringConnection
         {
             admin = 1,
+            SystemAdmin = 2,
+            SystemData = 3,
         }
     }
-    
+
     public class Connection
     {
-        public static void GetConnection(string pesquisa, int tipoConexao)
+        public static string GetStringConnection(StringConnection tipoConexao)
         {
-            var nameConnection = tipoConexao;
-            var lstrConn = ConfigurationManager.ConnectionStrings[tipoConexao].ConnectionString;
+            var nameConnection = (int)tipoConexao;
+            var lstrConn = ConfigurationManager.ConnectionStrings[nameConnection].ConnectionString;
 
-            var conn = new NpgsqlConnection(lstrConn);
+            return lstrConn;
+        }
+
+        /// <summary>
+        /// Abre a conexao com o banco de dados
+        /// </summary>
+        /// <param name="conn">Objeto NpgsqlConnection</param>
+        /// <returns>Status da conexao</returns>
+        public static ConnectionState OpenConnection(NpgsqlConnection conn)
+        {
+            conn.Open();
+            return conn.State;
+        }
+
+        /// <summary>
+        /// Fecha a conexão com o bando de dados
+        /// </summary>
+        /// <param name="conn">Objeto NpgsqlConnection</param>
+        /// <returns>Status da conexao</returns>
+        public static ConnectionState CloseConnection(NpgsqlConnection conn)
+        {
+            conn.Close();
+            return conn.State;
+        }
+
+        public static DataTable ExecuteDataTable<T>(string pstrQuery, T[] parrParameters, T[] parrValueParameters, StringConnection tipoConexao)
+        {
+            var conn = new NpgsqlConnection(GetStringConnection(tipoConexao));
 
             OpenConnection(conn);
 
-            var cmd = new NpgsqlCommand("SELECT name FROM bigdata.facebook WHERE name = @id;", conn);
+            var cmd = new NpgsqlCommand(pstrQuery, conn);
 
-            cmd.Parameters.Add("@id", NpgsqlTypes.NpgsqlDbType.Text).Value = "itau";
+            for (var lintCont = 0; lintCont < parrParameters.Length; lintCont++)
+                cmd.Parameters.Add(parrParameters[lintCont].ToString(), NpgsqlTypes.NpgsqlDbType.Text).Value = parrValueParameters[lintCont];
 
-            var dr = cmd.ExecuteReader();
+            var da = new NpgsqlDataAdapter(cmd);
+            var ltblDados = new DataTable();
 
-            while (dr.Read())
-            {
-                Console.WriteLine(dr[0]);
-            }
+            da.Fill(ltblDados);
+
+            CloseConnection(conn);
+
+            return ltblDados;
         }
-
-        private static void OpenConnection(NpgsqlConnection conn)
-            => conn.Open();
-
-        private static void CloseConnection(NpgsqlConnection conn)
-            => conn.Close();
     }
 }

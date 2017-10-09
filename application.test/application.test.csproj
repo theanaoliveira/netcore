@@ -12,4 +12,9 @@
     <PackageReference Include="MSTest.TestFramework" Version="1.1.18" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\application\application.csproj" />
+    <ProjectReference Include="..\dataAccess\dataAccess.csproj" />
+  </ItemGroup>
+
 </Project>

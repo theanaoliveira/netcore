@@ -5,6 +5,8 @@ using System.Net;
 using System.Text;
 using static netcore.ItensFacebook;
 using dataAccess;
+using System.Collections.Generic;
+using System.Data;
 
 namespace netcore
 {
@@ -13,10 +15,6 @@ namespace netcore
         static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.UTF8;
-
-            //Connection.GetConnection("");
-
-
             GetInfoFacebook();
         }
 
@@ -52,7 +50,19 @@ namespace netcore
         /// <returns>objeto Facebook com o token</returns>
         static Facebook GetToken()
         {
-            var UrlToken = "https://graph.facebook.com/oauth/access_token?%20client_id=490550411131528&client_secret=d58ceaefa66111f90c5924de04fddaaf&grant_type=client_credentials";
+            var larrParameters = new string[1] { "@api" };
+            var larrValues = new string[1] { "facebook" };
+            var ltblDadosKey = Connection.ExecuteDataTable<string>("select client_id, client_secret from bigdata.api_key where api = @api", larrParameters, larrValues, EnumConnection.StringConnection.admin);
+            var lstrClientId = "";
+            var lstrClientSecret = "";
+
+            if (ltblDadosKey.Rows.Count > 0)
+            {
+                lstrClientId = ltblDadosKey.Rows[0]["client_id"].ToString();
+                lstrClientSecret = ltblDadosKey.Rows[0]["client_secret"].ToString();
+            }
+
+            var UrlToken = $"https://graph.facebook.com/oauth/access_token?%20client_id={lstrClientId}&client_secret={lstrClientSecret}&grant_type=client_credentials";
             var responseFromServer = ReadUrl(UrlToken);
             var json = JsonConvert.DeserializeObject<Facebook>(responseFromServer);
 
