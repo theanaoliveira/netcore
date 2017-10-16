@@ -48,9 +48,7 @@ namespace netcore
         /// <returns>objeto Facebook com o token</returns>
         static Facebook GetToken()
         {
-            var larrParameters = new string[1] { "@api" };
-            var larrValues = new string[1] { "facebook" };
-            var ltblDadosKey = "";// Connection.ExecuteDataTable<string>("select client_id, client_secret from bigdata.api_key where api = @api", larrParameters, larrValues, EnumConnection.StringConnection.admin);
+            var ltblDadosKey = Connection.ExecuteDataTable("select key, key_secret from bigdata.api_key where api = 'facebook'", Connection.StringConnection.SystemAdmin);
             var lstrClientId = "";
             var lstrClientSecret = "";
 

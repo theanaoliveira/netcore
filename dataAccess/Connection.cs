@@ -4,11 +4,10 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using static dataAccess.EnumConnection;
 
 namespace dataAccess
 {
-    public class EnumConnection
+    public class Connection
     {
         public enum StringConnection
         {
@@ -17,10 +16,8 @@ namespace dataAccess
             SystemAdminSql = 3,
             SystemDataSql = 4,
         }
-    }
 
-    public class Connection
-    {
+
         /// <summary>
         /// Recupera a string de conexão
         /// </summary>
@@ -77,6 +74,24 @@ namespace dataAccess
             CloseConnection(conn);
 
             conn.Dispose();
+        }
+
+        public static DataTable ExecuteDataTable(string pstrQuery, StringConnection tipoConexao)
+        {
+            var conn = new NpgsqlConnection(GetStringConnection(tipoConexao));
+            var loAdp = new NpgsqlDataAdapter(pstrQuery, conn);
+            var ltblDados = new DataTable();
+
+            loAdp.Fill(ltblDados);
+
+            OpenConnection(conn);
+
+            CloseConnection(conn);
+
+            loAdp.Dispose();
+            conn.Dispose();
+
+            return ltblDados;
         }
     }
 }
