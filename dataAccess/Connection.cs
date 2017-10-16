@@ -12,14 +12,20 @@ namespace dataAccess
     {
         public enum StringConnection
         {
-            admin = 1,
-            SystemAdmin = 2,
-            SystemData = 3,
+            SystemAdmin = 1,
+            SystemData = 2,
+            SystemAdminSql = 3,
+            SystemDataSql = 4,
         }
     }
 
     public class Connection
     {
+        /// <summary>
+        /// Recupera a string de conexão
+        /// </summary>
+        /// <param name="tipoConexao">Enum StringConnection</param>
+        /// <returns>a string de conexão da base de dados</returns>
         public static string GetStringConnection(StringConnection tipoConexao)
         {
             var nameConnection = (int)tipoConexao;
@@ -50,25 +56,27 @@ namespace dataAccess
             return conn.State;
         }
 
-        public static DataTable ExecuteDataTable<T>(string pstrQuery, T[] parrParameters, T[] parrValueParameters, StringConnection tipoConexao)
+        /// <summary>
+        /// Executa uma instrução SQL
+        /// </summary>
+        /// <param name="parrQuery">Uma ou mais querys a serem executadas</param>
+        /// <param name="tipoConexao">Enum StringConnection</param>
+        public static void ExecuteSql(StringConnection tipoConexao, params string[] parrQuery)
         {
             var conn = new NpgsqlConnection(GetStringConnection(tipoConexao));
 
             OpenConnection(conn);
 
-            var cmd = new NpgsqlCommand(pstrQuery, conn);
-
-            for (var lintCont = 0; lintCont < parrParameters.Length; lintCont++)
-                cmd.Parameters.Add(parrParameters[lintCont].ToString(), NpgsqlTypes.NpgsqlDbType.Text).Value = parrValueParameters[lintCont];
-
-            var da = new NpgsqlDataAdapter(cmd);
-            var ltblDados = new DataTable();
-
-            da.Fill(ltblDados);
+            for (var lintCont = 0; lintCont < parrQuery.Length; lintCont++)
+            {
+                var cmd = new NpgsqlCommand(parrQuery[lintCont], conn);
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+            }
 
             CloseConnection(conn);
 
-            return ltblDados;
+            conn.Dispose();
         }
     }
 }

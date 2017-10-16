@@ -1,54 +1,45 @@
-create table if not exists bigdata.api_key (
-	api text,
-    client_id text,
-    client_secret text
+CREATE TABLE IF NOT EXISTS SCENARIO (
+	ID_MODULE VARCHAR(20),
+    ID_USER INT,
+    ID_SCENARIO INT,
+    SCEN_NAME TEXT,
+    SEARCH VARCHAR(100),
+    EMPRESA TEXT,
+    GRUPO_ANALISE TEXT,
+    PERIODICIDADE VARCHAR(50),
+    FLAG_MARCA INT,
+    SCEN_TYPE CHAR(1),
+    LANGUAGE VARCHAR(50),
+    LOCATION VARCHAR(1000),
+    FLAG_LOCATION INT,
+    TYPE_PERIOD CHAR(5),
+    MAP_SELECTION CHAR(10)
 );
 
-
-create table if not exists bigdata.scenario_bigdata(
-	id_module varchar(20),
-    id_user int,
-    id_scenario int,
-    scen_name text,
-    empresa text,
-    grupo_analise text,
-    periodicidade text,
-	flag_marga int,
-    scen_type char(1),
-    language text,
-    location text,
-    flag_location int,
-    type_period char(10),
-    map_selection char(10)
+CREATE TABLE IF NOT EXISTS SCENARIO_OCORRENCIA (
+	WORD TEXT,
+    QTD INT,
+    ORIGEM VARCHAR(50),
+    ITEMPESQUISA VARCHAR(1000),
+    STATUS VARCHAR(100),
+    IDPOST VARCHAR(1000)
 );
 
-create table if not exists bigdata.scenario_ocorrencia (
-    id_scenario int,
-	word text,
-    qtd int,
-    origem text,
-    itempesquisa text,
-    status text,
-    idpost text
+CREATE TABLE IF NOT EXISTS SCENARIO_SENTIMENTO (
+	ITEM VARCHAR(50),
+    POSITIVO INT,
+    NEUTRO INT,
+    NEGATIVO INT,
+    PERIOD TEXT,
+    IDPOST VARCHAR(8000)
 );
 
-create table if not exists bigdata.scenario_dados (
-	id_scenario int,
-    item text,
-    positivo text,
-    neutro text,
-    negativo text,
-    periodo text,
-    idpost text
-);
-
-create table if not exists bigdata.scenario_localizacao (
-	id_scenario int,
-    itempesquisa text,
-    status text,
-    latitude text,
-    longitude text,
-    origem text,
-    address text,
-    idpost text
+CREATE TABLE IF NOT EXISTS SCENARIO_LOCATION (
+	ITEMPESQUISA TEXT,
+    STATUS VARCHAR(100),
+    LATITUDE VARCHAR(100),
+    LONGITUDE VARCHAR(100),
+    ORIGEM VARCHAR(50),
+    ADDRESS TEXT,
+    IDPOST VARCHAR(1000)
 )
