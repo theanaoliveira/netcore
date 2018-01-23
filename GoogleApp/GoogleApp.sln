@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleApp", "GoogleApp\GoogleApp.csproj", "{29B9F0C8-E5DF-45BF-AB79-7452A45FF94B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{29B9F0C8-E5DF-45BF-AB79-7452A45FF94B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29B9F0C8-E5DF-45BF-AB79-7452A45FF94B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29B9F0C8-E5DF-45BF-AB79-7452A45FF94B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29B9F0C8-E5DF-45BF-AB79-7452A45FF94B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ACDC6D3B-F9A6-467A-847C-6B8512CE1259}
+	EndGlobalSection
+EndGlobal

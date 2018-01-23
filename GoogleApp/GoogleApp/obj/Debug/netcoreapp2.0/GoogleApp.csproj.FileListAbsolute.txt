@@ -1,0 +1,11 @@
+C:\Users\Ana Caroline\source\repos\GoogleApp\GoogleApp\bin\Debug\netcoreapp2.0\GoogleApp.deps.json
+C:\Users\Ana Caroline\source\repos\GoogleApp\GoogleApp\bin\Debug\netcoreapp2.0\GoogleApp.runtimeconfig.json
+C:\Users\Ana Caroline\source\repos\GoogleApp\GoogleApp\bin\Debug\netcoreapp2.0\GoogleApp.runtimeconfig.dev.json
+C:\Users\Ana Caroline\source\repos\GoogleApp\GoogleApp\bin\Debug\netcoreapp2.0\GoogleApp.dll
+C:\Users\Ana Caroline\source\repos\GoogleApp\GoogleApp\bin\Debug\netcoreapp2.0\GoogleApp.pdb
+C:\Users\Ana Caroline\source\repos\GoogleApp\GoogleApp\obj\Debug\netcoreapp2.0\GoogleApp.csprojResolveAssemblyReference.cache
+C:\Users\Ana Caroline\source\repos\GoogleApp\GoogleApp\obj\Debug\netcoreapp2.0\GoogleApp.csproj.CoreCompileInputs.cache
+C:\Users\Ana Caroline\source\repos\GoogleApp\GoogleApp\obj\Debug\netcoreapp2.0\GoogleApp.AssemblyInfoInputs.cache
+C:\Users\Ana Caroline\source\repos\GoogleApp\GoogleApp\obj\Debug\netcoreapp2.0\GoogleApp.AssemblyInfo.cs
+C:\Users\Ana Caroline\source\repos\GoogleApp\GoogleApp\obj\Debug\netcoreapp2.0\GoogleApp.dll
+C:\Users\Ana Caroline\source\repos\GoogleApp\GoogleApp\obj\Debug\netcoreapp2.0\GoogleApp.pdb
